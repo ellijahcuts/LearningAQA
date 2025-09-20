@@ -27,6 +27,7 @@ test.describe('Профиль пользователя', () =>{
         await page.locator('[href="#/settings"]').click()
         await page.locator('[placeholder="URL of profile picture"]').fill('https://img.freepik.com/free-photo/portrait-ghanaian-man_53876-32448.jpg?semt=ais_incoming&w=740&q=80')
         await page.locator('[placeholder="Short bio about you"]').fill(userText)
+        await expect(page.locator('[placeholder="Short bio about you"]')).toContainText(userText)
         await page.locator('[class="btn btn-lg btn-primary pull-xs-right"]').click()
         await expect(page.locator('[class="btn btn-lg btn-primary pull-xs-right"]')).toBeHidden()
     })
