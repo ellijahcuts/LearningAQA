@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "aqa": "npx playwright test",
-    "aqaui": "npx playwright test --ui"
+    "aqaui": "npx playwright test --ui",
+    "gen": "npx playwright codegen"
   },
   "keywords": [],
   "author": "",

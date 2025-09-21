@@ -6,7 +6,7 @@ const URL = 'https://realworld.qa.guru/'
 let newUserProfileMan;
 
 
-test.describe.only('Demo', () =>{
+test.describe('Demo', () =>{
     test.beforeEach('Rega', async ({ page }) => {
         newUserProfileMan ={
             UserEmail: faker.internet.email(),
@@ -21,9 +21,6 @@ test.describe.only('Demo', () =>{
                 return message
             }
         }
-
-        newUserProfileMan.getText()
-
         await page.goto(URL);
         await page.getByRole('link', { name: 'Sign up' }).click();
         await page.getByRole('textbox', { name: 'Your Name' }).click();
