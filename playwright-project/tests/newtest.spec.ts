@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import {MainPage} from '../src/pages/main.page'
+import {RegPage} from '../src/pages/reg.page'
 
 //Переменные и константы
 const URL = 'https://realworld.qa.guru/'
@@ -24,19 +25,12 @@ test.describe('Demo', () =>{
             }
         }
         const mainPage = new MainPage(page);
+        const regPage = new RegPage(page);
+
         await mainPage.open(URL);
-        await mainPage.register();
+        await mainPage.clickSignUp();
+        await regPage.register(newUserProfileMan.UserName, newUserProfileMan.UserEmail, newUserProfileMan.UserPassword);
 
-
-        //await page.goto(URL);
-        //await page.getByRole('link', { name: 'Sign up' }).click();
-        await page.getByRole('textbox', { name: 'Your Name' }).click();
-        await page.getByRole('textbox', { name: 'Your Name' }).fill(newUserProfileMan.UserName);
-        await page.getByRole('textbox', { name: 'Email' }).click();
-        await page.getByRole('textbox', { name: 'Email' }).fill(newUserProfileMan.UserEmail);
-        await page.getByRole('textbox', { name: 'Password' }).click();
-        await page.getByRole('textbox', { name: 'Password' }).fill(newUserProfileMan.UserPassword);
-        await page.getByRole('button', { name: 'Sign up' }).click();
     })
     test('Redacrura', async ({ page }) => {
         await page.locator('[class="nav-link dropdown-toggle cursor-pointer"]').click()
