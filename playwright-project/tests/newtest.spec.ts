@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
+import {MainPage} from '../src/pages/main.page'
 
 //Переменные и константы
 const URL = 'https://realworld.qa.guru/'
 let newUserProfileMan;
+
 
 
 test.describe('Demo', () =>{
@@ -21,8 +23,13 @@ test.describe('Demo', () =>{
                 return message
             }
         }
-        await page.goto(URL);
-        await page.getByRole('link', { name: 'Sign up' }).click();
+        const mainPage = new MainPage(page);
+        await mainPage.open(URL);
+        await mainPage.register();
+
+
+        //await page.goto(URL);
+        //await page.getByRole('link', { name: 'Sign up' }).click();
         await page.getByRole('textbox', { name: 'Your Name' }).click();
         await page.getByRole('textbox', { name: 'Your Name' }).fill(newUserProfileMan.UserName);
         await page.getByRole('textbox', { name: 'Email' }).click();

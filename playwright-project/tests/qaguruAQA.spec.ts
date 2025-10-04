@@ -13,6 +13,8 @@ test.describe('Профиль пользователя', () =>{
       let userEmail = faker.internet.email() //
       let userPass = faker.internet.password()
 
+
+
     await page.getByRole('link', { name: 'Sign up' }).click();
     await page.getByRole('textbox', { name: 'Your Name' }).click();
     await page.getByRole('textbox', { name: 'Your Name' }).fill(userName);
