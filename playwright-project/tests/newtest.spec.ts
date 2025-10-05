@@ -47,9 +47,9 @@ test.describe('qaGuruRealWorldWithRegistration', () =>{
 test.describe('qaGuruRealWorldWithLogin', () =>{
     test('Login', async ({ page }) => {
         regularUser={
-            UserEmail: 'TeodoroRuzvelt@gmail.com',
-            UserName: 'Teodor Ruzvelt',
-            UserPassword: '148899900',
+            UserEmail: 'ggwp221123123@gmail.com',
+            UserName: 'T1261234Ruzvelt',
+            UserPassword: '12312321399900',
             userWord: faker.lorem.word({ length: { min: 4, max: 12 }, strategy: 'closest' }),
             userTags: faker.lorem.word({ length: { min: 3, max: 6 }, strategy: 'closest' }),
             userText: faker.lorem.sentences({ min: 1, max: 3 }),

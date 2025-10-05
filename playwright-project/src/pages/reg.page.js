@@ -9,23 +9,23 @@ export class SignInAndUpPage extends BasePage{
         this.userNameField = this.page.getByRole('textbox', { name: 'Your Name' });
         this.signUpButton = this.page.getByRole('button', { name: 'Sign up'})
         this.signInButton = this.page.getByRole('button', { name: 'Login'})
-        this.accNameHeader = this.page.locator('[alt="Teodor Ruzvelt"]')
+        this.accNameHeader = this.page.locator('[alt="T1261234Ruzvelt"]')
     }
 
-    async register(UserName, UserEmail, UserPassword){
+    async register(userName, userEmail, userPassword){
         await this.userNameField.click();
-        await this.userNameField.fill(UserName);
+        await this.userNameField.fill(userName);
         await this.emailField.click();
-        await this.emailField.fill(UserEmail);
+        await this.emailField.fill(userEmail);
         await this.passField.click();
-        await this.passField.fill(UserPassword);
+        await this.passField.fill(userPassword);
         await this.signUpButton.click();
     }
-    async login(UserName, UserEmail, UserPassword){
+    async login(userName, userEmail, userPassword){
         await this.emailField.click();
-        await this.emailField.fill(UserEmail);
+        await this.emailField.fill(userEmail);
         await this.passField.click();
-        await this.passField.fill(UserPassword);
+        await this.passField.fill(userPassword);
         await this.signInButton.click();
         await expect(this.accNameHeader).toBeVisible();
     }
