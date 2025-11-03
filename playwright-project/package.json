@@ -1,19 +1,27 @@
 {
-  "name": "playwright-project",
+  "name": "dns-shop-autotesting",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "aqa": "npx playwright test",
     "aqaui": "npx playwright test --ui",
-    "gen": "npx playwright codegen"
+    "gen": "npx playwright codegen",
+    "allure": "allure open",
+    "allureGen": "allure generate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@faker-js/faker": "^10.0.0",
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.3.0"
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.7.0",
+    "allure-playwright": "^3.4.1",
+    "playwright-core": "^1.56.0",
+    "os": "^0.1.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.0.0"
+
   }
 }

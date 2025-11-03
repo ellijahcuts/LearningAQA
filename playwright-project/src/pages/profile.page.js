@@ -8,7 +8,7 @@ export class ProfilePage extends BasePage{
         this.menuProfileButton = this.page.locator('a[href*="/profile/"]')
         this.menuLogoutButton = this.page.getByText('Logout')
         this.pickMyArticles = this.page.locator('a[href*="#/article/"]')
-        this.deleteButton = this.page.getByRole("button", 'Delete article')
+        this.deleteButton = this.page.getByRole("button", {name:'Delete article'})
         this.newArticleButton = this.page.locator('[href="#/editor"]')
         this.articleTitleField =  this.page.locator('[placeholder="Article Title"]')
         this.articleAboutField =  this.page.locator('[placeholder="What\'s this article about?"]')

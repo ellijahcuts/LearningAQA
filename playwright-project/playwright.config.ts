@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import * as os from "node:os";
 
 /**
  * Read environment variables from file.
@@ -24,7 +25,16 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['line'],
-    ['html', {open: 'never'}]
+    ['html', {open: 'never'}],
+    ["allure-playwright",{
+      environmentInfo: {
+        os_platform: os.platform(),
+        os_release: os.release(),
+        os_version: os.version(),
+        node_version: process.version,
+      },
+    },
+    ]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -42,13 +52,13 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     }
     // {
-      //  name: 'firefox',
-      //  use: { ...devices['Desktop Firefox'] },
+    //  name: 'firefox',
+    //  use: { ...devices['Desktop Firefox'] },
     // },
 
     //{
     ////  name: 'webkit',
-  // use: { ...devices['Desktop Safari'] },
+    // use: { ...devices['Desktop Safari'] },
     // },
 
     /* Test against mobile viewports. */

@@ -20,5 +20,4 @@ export class SettingsPage extends BasePage{
         await expect(this.bioField).toContainText(userText)
         await expect(this.saveBioButton).toBeHidden()
     }
-    as
 }
